@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe :: Game</title>
+    <title>Rock Paper Scissors :: Game</title>
 </head>
 <body>
-    <section class="user">
-        <h1 class="heading">You</h1>
-        <button class="user-button choice" id="user-stone">Stone</button>
-        <button class="user-button choice" id="user-paper">Paper</button>
-        <button class="user-button choice" id="user-scissors">Scissors</button>
-    </section>
-    <section class="computer">
-        <h1 class="heading">Computer</h1>
-        <button class="choice">Stone</button>
-        <button class="choice">Paper</button>
-        <button class="choice">Scissors</button>
-    </section>
+    <h1 class="main-heading">Rock Paper Scissors</h1>
+    <div class="main">
+    <div class="scoreboard">
+        <h1 class="socreboard-heading">ScoreBoard</h1>
+        <span class="usertag">User</span>
+        <div class="score-box">
+            <div class="userscore" id="userscore"></div>
+            <span>::</span>
+            <div class="computerscore" id="computerscore"></div>
+
+
+        </div>
+        <span class="computertag">Comp.</span>
+
+    </div>
+
+
+
+
+    <h1 class="rules">Rules are simple: Rock beats Scissors, Scissors beats Paper & Paper beats Rock.</h1>
+        <h2>Choose Any One Rock, Paper Or Scissors.</h2>
+        <div class="buttons">
+        <button class="user-button choice" id="user-stone"><img src="stone.png" alt="" srcset=""></button>
+        <button class="user-button choice" id="user-paper"><img src="paper.png" alt="" srcset=""></button>
+        <button class="user-button choice" id="user-scissors"><img src="scissors.png" alt="" srcset=""></button>
+    </div> 
+    <h1 id="resulttag"></h1></div>
+    <h1 id="resulttag"></h1>
+</section>
 </body>
 <script src="app.js"></script>
 </html>

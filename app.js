@@ -1,18 +1,23 @@
+var userscore=0;
+var compscore=0;
+sessionStorage.setItem('userScore',userscore);
+sessionStorage.setItem('compScore',compscore);
+
 document.getElementById('user-stone').addEventListener('click',()=>{
-    console.log(showresult('stone'));
+    whoWin(showresult('stone'));
     
 })
 document.getElementById('user-paper').addEventListener('click',()=>{
-    console.log(showresult('paper'));
+    whoWin(showresult('paper'));
 })
 document.getElementById('user-scissors').addEventListener('click',()=>{
-    console.log(showresult('scissors'));
+    whoWin(showresult('scissors'));
 })
 
 function showresult(item){
     var result;
     var computervalue = computerChoice();
-    console.log(computervalue);
+    // console.log(computervalue);
     if(item==computervalue) result='Draw';
     else if(item=='stone') {
         if(computervalue =='paper') result=false;
@@ -38,3 +43,10 @@ function computerChoice(){
     return choice;
 
 } 
+
+function whoWin(rs) {
+    document.getElementById('resulttag').innerText='';
+    if(rs)  document.getElementById('resulttag').innerHTML='You Won';
+    else if(rs==false)  document.getElementById('resuttag').innerHTML='You loose';
+
+}
