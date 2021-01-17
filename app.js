@@ -5,7 +5,6 @@ sessionStorage.setItem('compScore',compscore);
 
 document.getElementById('user-stone').addEventListener('click',()=>{
     whoWin(showresult('stone'));
-    
 })
 document.getElementById('user-paper').addEventListener('click',()=>{
     whoWin(showresult('paper'));
@@ -14,6 +13,10 @@ document.getElementById('user-scissors').addEventListener('click',()=>{
     whoWin(showresult('scissors'));
 })
 
+function removeclass(classname) {
+    document.getElementById(classname).classList.remove('user-button');
+    
+}
 function showresult(item){
     var result;
     var computervalue = computerChoice();
@@ -43,10 +46,49 @@ function computerChoice(){
     return choice;
 
 } 
+var computerscore=0;
+var userscore=0;
 
+document.getElementById('userscore').innerHTML=userscore;
+document.getElementById('computerscore').innerHTML=computerscore;
 function whoWin(rs) {
-    document.getElementById('resulttag').innerText='';
-    if(rs)  document.getElementById('resulttag').innerHTML='You Won';
-    else if(rs==false)  document.getElementById('resuttag').innerHTML='You loose';
+    console.log(rs);
+    cleartag();
+    if(rs==true) 
+    {   
+        document.getElementById('resulttag').innerHTML="";
+      setTimeout(() => {
+        document.getElementById('resulttag').innerHTML='You Won';
+      }, 300);
+        userscore++;
+        document.getElementById('userscore').innerHTML=userscore;
+}
+    else if(rs==false) 
+    {
+        document.getElementById('resulttag').innerHTML="";
+      setTimeout(() => {
+        document.getElementById('resulttag').innerHTML='You Loose';
+      }, 300);
+        computerscore++;
+        document.getElementById('computerscore').innerHTML=computerscore;
+    } 
+    else {
+        document.getElementById('resulttag').innerHTML="";
+        setTimeout(() => {
+          document.getElementById('resulttag').innerHTML='Its a Draw';
+        }, 300);
+    }
 
 }
+
+function cleartag() {
+    document.getElementById('resulttag').innerText='';
+    
+}
+document.getElementById('reset').addEventListener('click',() =>{
+    userscore=0;
+    computerscore=0;
+    document.getElementById('userscore').innerHTML=userscore;
+    document.getElementById('computerscore').innerHTML=computerscore;
+    document.getElementById('resulttag').innerHTML="";
+})
