@@ -5,21 +5,27 @@ sessionStorage.setItem('compScore',compscore);
 
 document.getElementById('user-stone').addEventListener('click',()=>{
     whoWin(showresult('stone'));
+    showbutton();
+   
 })
 document.getElementById('user-paper').addEventListener('click',()=>{
     whoWin(showresult('paper'));
+    showbutton();
+
 })
 document.getElementById('user-scissors').addEventListener('click',()=>{
     whoWin(showresult('scissors'));
+    showbutton();
 })
 
 function removeclass(classname) {
     document.getElementById(classname).classList.remove('user-button');
     
 }
+var computervalue;
 function showresult(item){
     var result;
-    var computervalue = computerChoice();
+    computervalue = computerChoice();
     // console.log(computervalue);
     if(item==computervalue) result='Draw';
     else if(item=='stone') {
@@ -40,7 +46,7 @@ function showresult(item){
 function computerChoice(){
 
     var choice=Math.floor(Math.random()*3 +1);
-    if( choice== 1) choice = 'stone';
+if( choice== 1) choice = 'stone';
     else if(choice== 2) choice = 'paper';
     else if(choice == 3) choice = 'scissors';
     return choice;
@@ -92,3 +98,13 @@ document.getElementById('reset').addEventListener('click',() =>{
     document.getElementById('computerscore').innerHTML=computerscore;
     document.getElementById('resulttag').innerHTML="";
 })
+
+function showbutton() {
+    document.getElementById
+    document.getElementById(computervalue).classList.remove("hidden");
+    document.getElementById('computer-button').classList.remove("hidden");
+    setTimeout(() => {
+        document.getElementById(computervalue).classList.add("hidden");
+        document.getElementById('computer-button').classList.add("hidden");
+    }, 1000);
+}

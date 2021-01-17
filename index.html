@@ -25,13 +25,30 @@
     <h1 class="rules">Rules are simple: Rock beats Scissors, Scissors beats Paper & Paper beats Rock.</h1>
         <h2>Choose Any One Rock, Paper Or Scissors.</h2>
         <div class="buttons">
+            <div class="wrapper">
+            <h2>Your choice</h2>
+            <div class="user-buttons border-button">
         <button class="choice" id="user-stone"><img src="stone.png" alt="" srcset=""></button>
         <button class="choice" id="user-paper"><img src="paper.png" alt="" srcset=""></button>
         <button class="choice" id="user-scissors"><img src="scissors.png" alt="" srcset=""></button>
     </div> 
+</div>
+<div class="wrapper">
+        <h2>Computer's choice</h2>
+    <div class="computer-buttons border-button hidden comp-choice" id="computer-button">
+        <button class="choice hidden comp-choice" id="stone"><img src="stone.png" alt="" srcset=""></button>
+        <button class="choice hidden comp-choice" id="paper"><img src="paper.png" alt="" srcset=""></button>
+        <button class="choice hidden comp-choice" id="scissors"><img src="scissors.png" alt="" srcset=""></button>
+    </div></div>
+
+
+</div>
+
     <h1 id="resulttag"></h1>
     <button class="reset" id="reset">Reset</button>
    </div>
+
+
    <footer>
     <h2>Made by <a href="https://gauravbissa.netlify.app">Gaurav Bissa</a></h2>
 
